@@ -1,1 +1,5 @@
 # boxer
+
+```
+sudo apt update
+```
