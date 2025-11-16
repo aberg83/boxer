@@ -9,6 +9,11 @@ services:
       - 127.0.0.1:3000:3000
     volumes:
       - /opt/appdata/nzbdav:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "nzbdav"
+      tsdproxy.container_port: 3000
+      tsdproxy.ephemeral: "false"
     restart: unless-stopped
   plex:
     image: lscr.io/linuxserver/plex:latest
