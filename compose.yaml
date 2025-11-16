@@ -18,6 +18,8 @@ services:
       - PGID=1000
       - TZ=America/Toronto
       - VERSION=latest
+    ports:
+      - 32400:32400
     volumes:
       - /opt/appdata/plex:/config
       - nzbdav:/mnt/nzbdav
