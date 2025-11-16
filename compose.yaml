@@ -87,8 +87,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - datadir:/data
       - /opt/appdata/tsdproxy:/config
-    ports:
-      - 8080:8080
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "tsdproxy"
+      tsdproxy.container_port: 8080
+      tsdproxy.ephemeral: "false"
     restart: unless-stopped
 volumes:
   datadir:
