@@ -9,6 +9,7 @@ services:
       - 127.0.0.1:3000:3000
     volumes:
       - /opt/appdata/nzbdav:/config
+      - /mnt/data:/data
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "nzbdav"
