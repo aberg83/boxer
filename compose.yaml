@@ -44,6 +44,9 @@ services:
       - /opt/appdata/radarr:/config
       - nzbdav:/mnt/nzbdav
       - /mnt/data:/data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "radarr-vps"
     restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
