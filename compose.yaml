@@ -38,6 +38,11 @@ services:
       - TZ=America/Toronto
     volumes:
       - /opt/appdata/prowlarr:/config
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.name: "prowlarr-vps"
+      tsdproxy.container_port: 9696
+      tsdproxy.ephemeral: "false"
     restart: unless-stopped
   radarr:
     image: lscr.io/linuxserver/radarr:latest
