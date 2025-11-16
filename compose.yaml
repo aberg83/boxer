@@ -86,7 +86,7 @@ services:
       - PGID=1000
       - TZ=America/Toronto
       - URL=boxer.haus
-      - SUBDOMAINS=nzbdav,radarr,plex
+      - SUBDOMAINS=plex
       - VALIDATION=http
     volumes:
       - /opt/appdata/swag:/config
