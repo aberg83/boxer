@@ -47,6 +47,8 @@ services:
     labels:
       tsdproxy.enable: "true"
       tsdproxy.name: "radarr-vps"
+      tsdproxy.container_port: 7878
+      tsdproxy.ephemeral: "false"
     restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
