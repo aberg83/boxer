@@ -55,6 +55,15 @@ services:
       tsdproxy.container_port: 7878
       tsdproxy.ephemeral: "false"
     restart: unless-stopped
+  recyclarr:
+    image: ghcr.io/recyclarr/recyclarr
+    container_name: recyclarr
+    user: 1000:1000
+    volumes:
+      - /opt/appdata/recyclarr:/config
+    environment:
+      - TZ=America/Toronto
+    restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
