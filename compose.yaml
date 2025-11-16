@@ -75,7 +75,17 @@ services:
       - 443:443
       - 80:80
     restart: unless-stopped
+  tsdproxy:
+    image: almeidapaulopt/tsdproxy:1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - datadir:/data
+      - /opt/appdata/tsdproxy:/config
+    ports:
+      - 8080:8080
+    restart: unless-stopped
 volumes:
+  datadir:
   nzbdav:
     driver: rclone
     driver_opts:
